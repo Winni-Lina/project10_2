@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ public class ResultActivity extends AppCompatActivity {
 
         int[] tvIds = {R.id.text1, R.id.text2, R.id.text3, R.id.text4, R.id.text5, R.id.text6, R.id.text7, R.id.text8, R.id.text9};
         int[] rbIds = {R.id.rating1, R.id.rating2, R.id.rating3, R.id.rating4, R.id.rating5, R.id.rating6, R.id.rating7, R.id.rating8, R.id.rating9};
+        int[] imgsrcids = {R.drawable.i01, R.drawable.i02, R.drawable.i03, R.drawable.i04, R.drawable.i05, R.drawable.i06, R.drawable.i07, R.drawable.i08, R.drawable.i09};
 
         for (int i = 0; i < tv.length; i++){
             tv[i] = findViewById(tvIds[i]);
@@ -32,6 +34,17 @@ public class ResultActivity extends AppCompatActivity {
             tv[i].setText(imgNames[i]);
             rb[i].setRating(voteCount[i]);
         }
+        int index = 0;
+        int max = 0;
+        for (int i = 0; i<voteCount.length; i++){
+            if (voteCount[i] > max){
+                max = voteCount[i];
+                index = i;
+            }
+        }
+        ImageView imgv = findViewById(R.id.imgv);
+        imgv.setImageResource(imgsrcids[index]);
+
         Button btnBack = findViewById(R.id.btn_back);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override

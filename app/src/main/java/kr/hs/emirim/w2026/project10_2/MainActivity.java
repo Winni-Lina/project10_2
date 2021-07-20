@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    String[] imgNames = {"바라만 본다", "Next Level", "신호등", "Butter", "Permission to Dance", "Weekend", "헤픈 우연", "치맛바람", "Peaches"};
+    String[] imgNames = {"동물1", "동물2", "동물3", "동물4", "동물5", "동물6", "동물7", "동물8", "동물9 "};
     int[] imgIds = {R.id.img01, R.id.img02, R.id.img03, R.id.img04, R.id.img05, R.id.img06, R.id.img07, R.id.img08, R.id.img09};
     int[] voteCount = new int[imgIds.length];
     ImageView[] image = new ImageView[imgIds.length];
